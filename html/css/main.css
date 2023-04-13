@@ -81,20 +81,21 @@ body {
 	background-repeat: no-repeat;
 }
 
-.close {
+.close-button {
 	position: absolute;
-	width: 23.5%;
-	height: 5%;
-	top: 75%;
-	left: 25%;
-	padding-top: 15px;
-	color: white;
+	height: 4%;
+	width: 25%;
+	top: 78%;
+	left: 24.5%;
+	padding-top: 9px;
+	text-align: center;
 	font-size: 19px;
 	font-family: 'RDR Lino';
-	font-weight: bold;
-	text-align: center;
+	font-weight: bolder;
+	color: white;
 	background-image: url('img/button.png');
 	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 
 .inv-container {
@@ -338,15 +339,6 @@ body {
 	letter-spacing: 0.2vh;
 	top: 1vh;
 	left: 26.5vh;
-}
-
-.line-spacer {
-	position: absolute;
-	top: 30px;
-	left: -0.20vh;
-	width: 41.6vh;
-	height: 2px;
-	background-color: rgba(75, 75, 75, 0.322);
 }
 
 #other-inv-label {

@@ -15,25 +15,19 @@
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
         <link href="https://db.onlinewebfonts.com/c/ab21a97b9cae2e116d8d1473baefc9f0?family=RDR+Lino" rel="stylesheet" type="text/css"/>
     </head>
-    <body style="background-color: rgba(0,0,0,0); font-family: 'Roboto', sans-serif !important;">
+    <body style="background-color: rgba(0,0,0,0);">
         <div id="qbcore-inventory">
+
             <div class="inventory-info">
                 <div class="player-inv-info">
                     <span id="player-inv-label">Satchel</span><br>
                     <span id="player-inv-weight"><img src="css/img/.png"></span>
-                    <div class="line-spacer"></div>
                 </div> 
+
                 <div class="other-inv-info">
-                    <div class="line-spacer" style="top: 12.4vh;"></div>
                     <div class="other-header"><span id="other-inv-label"></span></div>
                     <!-- <span id="other-inv-weight"></span> -->
                 </div>
-            </div>
-
-            <div id="context-menu">
-                <div class="item" id="item-use">Use</div>
-                <div class="item" id="item-give">Give</div>
-                <div class="item" id="item-drop">Drop</div>
             </div>
 
             <div class="inv-container">
@@ -46,9 +40,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="ply-hotbar-inventory" data-inventory="hotbar">
                     <!-- auto generated -->
             </div>
+
             <div class="ply-iteminfo-container">
                 <div class="ply-iteminfo">
                     <div class="iteminfo-content">
@@ -58,7 +54,14 @@
                     </div>
                 </div>
             </div>
-            <div class="close" id="inv-close">Close</div>
+
+            <div id="context-menu">
+                <div class="item" id="item-use">Use</div>
+                <div class="item" id="item-give">Give</div>
+                <div class="item" id="item-drop">Drop</div>
+            </div>
+
+            <div class="close-button" id="inv-close">Close</div>
             <div class="other-inventory-background"></div>
             <div class="inv-background"></div>
         </div>

@@ -1256,8 +1256,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newData.amount +
                             " (" +
                             ((newData.weight * newData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else if ($toSlot == 21 && $toInv.attr("data-inventory") == "player") {
                     $toInv
@@ -1271,8 +1270,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newData.amount +
                             " (" +
                             ((newData.weight * newData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else {
                     $toInv
@@ -1286,8 +1284,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newData.amount +
                             " (" +
                             ((newData.weight * newData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 }
 
@@ -1378,8 +1375,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newData.amount +
                             " (" +
                             ((newData.weight * newData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else if ($toSlot == 21 && $toInv.attr("data-inventory") == "player") {
                     $toInv
@@ -1393,8 +1389,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newData.amount +
                             " (" +
                             ((newData.weight * newData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
 
                 }
@@ -1636,8 +1631,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             fromData.amount +
                             " (" +
                             ((fromData.weight * fromData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else if ($toSlot == 21 && $toInv.attr("data-inventory") == "player") {
                     $toInv
@@ -1651,8 +1645,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             fromData.amount +
                             " (" +
                             ((fromData.weight * fromData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else {
                     $toInv
@@ -1666,8 +1659,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             fromData.amount +
                             " (" +
                             ((fromData.weight * fromData.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 }
 
@@ -1915,8 +1907,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataTo.amount +
                             " (" +
                             ((newDataTo.weight * newDataTo.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else if ($toSlot == 21 && $toInv.attr("data-inventory") == "player") {
                     $toInv
@@ -1930,8 +1921,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataTo.amount +
                             " (" +
                             ((newDataTo.weight * newDataTo.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 } else {
                     $toInv
@@ -1945,8 +1935,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataTo.amount +
                             " (" +
                             ((newDataTo.weight * newDataTo.amount) / 1000).toFixed(1) +
-                            ")</p></div>" +
-                            ItemLabel
+                            ")</p></div>" 
                         );
                 }
 
@@ -2885,9 +2874,31 @@ $(document).on("click", "#rob-money", function (e) {
     );
     $("#rob-money").remove();
 });
+//                                       |
+// DONT KNOW IF THIS WILL WORK PROPERLY \/
+
+$(document).on("rightclick", ".item-slot", function (e) {
+
+    scope.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    
+        const { clientX: mouseX, clientY: mouseY } = event;
+    
+        contextMenu.style.top = `${mouseY}px`;
+        contextMenu.style.left = `${mouseX}px`;
+    
+        contextMenu.classList.remove("visible");
+    
+        setTimeout(() => {
+            contextMenu.classList.add("visible");
+            
+        });
+    });
+    
+});
 
 const contextMenu = document.getElementById("context-menu");
-const scope = document.querySelector("body");
+const scope = document.querySelector("item-slot");
 
 scope.addEventListener("contextmenu", (event) => {
     event.preventDefault();
